@@ -15,10 +15,18 @@
 				<br><br>
 
 				<button type="submit" value="send msg">Add Item</button>
+				<br><br>
+				
+			</form>
+			<form action="/myaction2" method="post">
+				<input type="text" name="name" placeholder="Enter name...." required />
+				<br><br>
+				<button type="submit" value="delete row">Delete Item</button>
 			</form>
 			
 					<% for(var i=0; i < status.length; i++) { %>
 						<li>
+						<td><%= status[i].serial_no %></td>
 						  <td><%= status[i].name %></td>
 						  <td><%= status[i].msg %></td>
 						</li>
