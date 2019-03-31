@@ -51,6 +51,18 @@ app.post('/myaction', function(req, res) {
     });
 });
 
+
+app.post('/myaction2', function(req, res) {
+    res.write('You delete "' + req.body.name +'".\n');  
+    res.end()
+    
+    con.query('delete from todolist where name = ?' , req.body.name ,function(err, result)      
+    {                                                      
+      if (err)
+         throw err;
+    });
+});
+
 app.listen(3000);
 
 console.log('You are listening to port 3000');
