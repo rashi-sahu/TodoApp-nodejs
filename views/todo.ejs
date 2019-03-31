@@ -8,16 +8,23 @@
 	</head>
 	<body>
 		<div id = "todo-table">
-			<form>
-				<input type="text" name="item" placeholder="Add new item..." required />
-				<button type="submit" >Add Item</button>
+			<form action="/myaction" method="post">
+				<input type="text" name="name" placeholder="Add name..." required />
+				<br><br>
+				<input type="text" name="msg" placeholder="Add msg..." required />
+				<br><br>
+
+				<button type="submit" value="send msg">Add Item</button>
 			</form>
-			<ul>
-				<li> <%= status %></li>
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-			</ul>
+			
+					<% for(var i=0; i < status.length; i++) { %>
+						<li>
+						  <td><%= status[i].name %></td>
+						  <td><%= status[i].msg %></td>
+						</li>
+					 <% } %>
+				
+			
 		</div>
 	</body>
 </html>
